@@ -11,6 +11,9 @@ import PromiseKit
 
 extension UIViewController {
     
+    /// Use showActivityIndicator method to show activityIndicator while loading
+    ///
+   
     func showActivityIndicator() {
         let activityView = UIActivityIndicatorView(style: UIActivityIndicatorView.Style.large)
         activityView.startAnimating()
@@ -20,6 +23,8 @@ extension UIViewController {
         self.view.addSubview(activityView)
     }
     
+    /// Use dismissActivityIndicator method to stop activityIndicator after loading
+    ///
     func dismissActivityIndicator() {
         if let subViews = self.view.viewWithTag(400) {
             subViews.removeFromSuperview()

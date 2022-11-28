@@ -7,6 +7,8 @@
 
 import Foundation
 
+/// Use WeatherInfo structure to store data object 
+///
 struct WeatherInfo: Codable {
     let main: Temperature
     let weather: [Weather]
