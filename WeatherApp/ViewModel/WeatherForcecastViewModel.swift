@@ -31,7 +31,7 @@ class WeatherForcastViewModel {
         }.done {  weatherInfo in
             resolver.fulfill(weatherInfo)
             
-        }.catch { [weak self] error in
+        }.catch { error in
             print(error.localizedDescription)
         }
         return promise
