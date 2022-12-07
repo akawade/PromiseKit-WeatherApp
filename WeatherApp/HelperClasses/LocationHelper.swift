@@ -8,12 +8,7 @@
 import UIKit
 import PromiseKit
 
-protocol LocationHelperProtocol {
-    func getCurrentCordinates() -> Promise<CLLocationCoordinate2D>
-}
 
-/// LocationHelper class helps get the location cordinates of the device.
-///
 /// Use this method to get current location
 
 class LocationHelper : LocationHelperProtocol {

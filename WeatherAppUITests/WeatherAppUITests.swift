@@ -22,15 +22,35 @@ class WeatherAppUITests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
-    func testExample() throws {
+    func testShowActivityIndicator() throws {
         // UI tests must launch the application that they test.
         let app = XCUIApplication()
         app.launch()
-
+        let activityIndicator = app.activityIndicators.element
+           XCTAssertTrue(activityIndicator.exists)
+           
+           // Wait for the loading indicator to disappear = content is ready
+//           expectation(for: NSPredicate(format: "exists == 0"),
+//                       evaluatedWith: activityIndicator)
+//
+//           // Use a generous timeout in case the network is slow
+//           waitForExpectations(timeout: 20)
         // Use recording to get started writing UI tests.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
     }
 
+    func testHideActivityIndicator(){
+        let app = XCUIApplication()
+        let activityIndicator = app.activityIndicators.element
+            
+            // Wait for the loading indicator to disappear = content is ready
+            expectation(for: NSPredicate(format: "exists == 0"),
+                        evaluatedWith: activityIndicator)
+                        
+            // Use a generous timeout in case the network is slow
+            waitForExpectations(timeout: 10)
+    }
+    
     func testLaunchPerformance() throws {
         if #available(macOS 10.15, iOS 13.0, tvOS 13.0, *) {
             // This measures how long it takes to launch your application.

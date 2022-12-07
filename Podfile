@@ -1,4 +1,4 @@
- platform :ios, '12.0'
+ platform :ios, '9.0'
 
 target 'WeatherApp' do
   use_frameworks!
@@ -6,5 +6,9 @@ target 'WeatherApp' do
   # Pods for WeatherApp
      pod "PromiseKit", "~> 6.0"
      pod "PromiseKit/CoreLocation", "~> 6.0"
+
+target 'WeatherAppTests' do
+    inherit! :search_paths
+ end
 
 end

@@ -30,24 +30,12 @@ class LocationHelperTests: XCTestCase {
     }
 
     func testGetCurrentCordinates() throws {
-//        let expectation = XCTestExpectation(description: "test getCordinate")
-//             firstly {
-//                (locationModel?.getCurrentCordinates())!
-//             }.done(on: .global(qos: .background)) { (_) in
-//                 XCTFail("test failed")
-//             }.catch(on: .global(qos: .background)) { (error) in
-//                 XCTAssertNotNil(error)
-//                 expectation.fulfill()
-//             }
-//
-//             wait(for: [expectation], timeout: 10.0)
+             firstly {
+                (locationModel?.getCurrentCordinates())!
+             }.done(on: .global(qos: .background)) { data in
+                XCTAssert(data.latitude == 0,   "test passed")
+             }.catch(on: .global(qos: .background)) { (error) in
+                 XCTAssertNotNil(error)
+             }
     }
-
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
-    }
-
 }

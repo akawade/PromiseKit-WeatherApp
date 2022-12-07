@@ -10,26 +10,22 @@ import PromiseKit
 import CoreLocation
 
 class ViewController: UIViewController {
-    
     @IBOutlet private weak var cityName: UILabel!
     @IBOutlet private weak var temperatureLabel: UILabel!
     @IBOutlet private weak var weatherImageView: UIImageView!
-    
-    private var viewModel: WeatherForcastViewModel = WeatherForcastViewModel(_locationVmodel: LocationHelper(),
+    @IBOutlet weak var descriptionLabel: UILabel!
+    private var viewModel: WeatherForcastViewModel = WeatherForcastViewModel(LocationHelper(),
                                                                              weatherVModel: WeatherHelper())
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         updateWithCurrentLocation()
     }
-    
     private func updateWithCurrentLocation() {
         showActivityIndicator()
-        
         viewModel.getWeatherForcastForLocation()
             .then { [weak self] weatherInfo -> Promise<UIImage> in
                 self?.updateDataToUI(with: weatherInfo)
-                
                 return self?.viewModel.getWeatherIconFrom(iconName: weatherInfo.weather.first!.icon)
                     ?? Promise(error: UIImage() as! Error)
             }.done(on: DispatchQueue.main) { imageIcon in
@@ -39,10 +35,8 @@ class ViewController: UIViewController {
             .catch { [weak self] error in
                 self?.dismissActivityIndicator()
                 guard let self = self else { return }
-                
                 self.cityName.text = ""
                 self.temperatureLabel.text = ""
-                
                 switch error {
                 case is CLError where (error as? CLError)?.code == .denied:
                     ViewController.show(Constants.PermissionMsgKey, from: self)
@@ -61,6 +55,7 @@ class ViewController: UIViewController {
         let temp = formatter.string(from: tempMeasurement)
         self.temperatureLabel.text = temp
         self.cityName.text = weatherInfo.name
+        self.descriptionLabel.text =  weatherInfo.weather.first!.description
     }
 }
 

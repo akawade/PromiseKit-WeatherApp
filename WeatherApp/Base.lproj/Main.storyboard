@@ -38,23 +38,34 @@
                                     <constraint firstAttribute="height" constant="100" id="dsK-Z6-lZz"/>
                                 </constraints>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i3K-JR-7HN">
+                                <rect key="frame" x="157" y="588" width="100" height="0.0"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" systemColor="systemGray5Color"/>
                         <constraints>
                             <constraint firstItem="xDm-gq-Akq" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.2" id="1KO-sR-kmr"/>
                             <constraint firstItem="nmY-V7-aJg" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="100" id="1cm-iJ-3CL"/>
                             <constraint firstItem="xDm-gq-Akq" firstAttribute="width" secondItem="nmY-V7-aJg" secondAttribute="width" id="5N5-gm-8GL"/>
                             <constraint firstItem="xDm-gq-Akq" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="GCP-7h-U01"/>
                             <constraint firstItem="cAy-5w-9Ml" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="JVo-5p-3iD"/>
+                            <constraint firstItem="i3K-JR-7HN" firstAttribute="top" secondItem="cAy-5w-9Ml" secondAttribute="bottom" constant="10" id="R34-uR-4RV"/>
+                            <constraint firstItem="i3K-JR-7HN" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="XN3-DM-7Az"/>
                             <constraint firstItem="nmY-V7-aJg" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.7" id="jOP-OV-TRV"/>
                             <constraint firstItem="nmY-V7-aJg" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="l0u-ZX-tQb"/>
                             <constraint firstItem="cAy-5w-9Ml" firstAttribute="top" secondItem="xDm-gq-Akq" secondAttribute="bottom" constant="24" id="lvB-fX-b0r"/>
+                            <constraint firstItem="i3K-JR-7HN" firstAttribute="width" secondItem="cAy-5w-9Ml" secondAttribute="width" id="tny-Vb-bOI"/>
                             <constraint firstItem="xDm-gq-Akq" firstAttribute="top" secondItem="nmY-V7-aJg" secondAttribute="bottom" constant="91" id="zWR-1V-asv"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="cityName" destination="nmY-V7-aJg" id="zPM-Jk-5ak"/>
+                        <outlet property="descriptionLabel" destination="i3K-JR-7HN" id="wdx-iR-ol1"/>
                         <outlet property="temperatureLabel" destination="xDm-gq-Akq" id="2f9-ad-yf4"/>
                         <outlet property="view" destination="8bC-Xf-vdC" id="6L9-9w-sIj"/>
                         <outlet property="weatherImageView" destination="cAy-5w-9Ml" id="7PV-oQ-G3h"/>
@@ -66,8 +77,8 @@
         </scene>
     </scenes>
     <resources>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        <systemColor name="systemGray5Color">
+            <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
