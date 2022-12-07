@@ -9,6 +9,10 @@ The Response recieved have an Icon name for that weather . This image name is fu
 and loads the image  to UI once it is available.
 It uses PromiseKit framework to  all the API calls.
 
+    Get weather details      - https://api.openweathermap.org/data/2.5/weather?lat=18.516726&lon=73.856255&appid=71274958d99855d4efc83eda8e6e2b42
+ 
+    Get Image of the weather - "http://openweathermap.org/img/w/"
+
 App Screen - 
 
 ![Optional Text](../development/Coverage/Screenshot.png) ![Optional Text](../development/Coverage/Coverage.png)
